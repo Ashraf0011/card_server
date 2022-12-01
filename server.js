@@ -7,7 +7,14 @@ var cors = require('cors');
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+app.use(
+    cors(
+        {
+            origin: "https://visionary-gecko-559fb4.netlify.app/",
+        }
+    )
+);
 
 mongoose.connect(process.env.MONGO_URL).then(() => {
     console.log("remote database connected");
