@@ -4,9 +4,9 @@ const router = express.Router();
 const CURD_SCHEMA = require('./schema');
 
 
-
+// Properly working version for vercel based backend.
 router.route('/').get((req, res) => {
-    res.send("CRUD route index reached.");
+    res.send("Database Connected!!");
 })
 
 router.route('/create').post((req, res) => {
