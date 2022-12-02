@@ -9,13 +9,16 @@ app.use(json());
 
 app.use(
     cors({
-        origin: 'https://visionary-gecko-559fb4.netlify.app/',
+        origin: "*",
         methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
         preflightContinue: true,
         credentials: true
     })
 );
-
+app.use('/', (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    next();
+})
 
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {
