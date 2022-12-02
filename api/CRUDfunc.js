@@ -5,7 +5,7 @@ import CURD_SCHEMA from './schema';
 
 // Properly working version for vercel based backend.
 router.route('/').get((req, res) => {
-    res.header("Access-Control-Allow-Origin", true);
+    res.header("Access-Control-Allow-Origin", "*");
     res.send("Backend Connected!!");
 })
 
