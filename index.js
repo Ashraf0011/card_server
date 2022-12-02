@@ -7,16 +7,14 @@ import cors from 'cors';
 const app = express();
 app.use(json());
 
-app.use(
-    cors(
-        {
-            origin: ["https://visionary-gecko-559fb4.netlify.app"],
-            methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
-            preflightContinue: true,
-            credentials: true
-        }
-    )
-);
+app.use(cors());
+
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 
 mongoose.connect(process.env.MONGO_URL, () => {
     console.log("remote database connected");
