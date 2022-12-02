@@ -8,7 +8,7 @@ const app = express();
 app.use(json());
 
 app.use(cors({
-    origin: "https://visionary-gecko-559fb4.netlify.app/",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }));
