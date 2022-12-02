@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const crudRoutes = require('./CRUDfunc');
+const crudRoutes = require('./api/CRUDfunc');
 require('dotenv').config();
 var cors = require('cors');
 
