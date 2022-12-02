@@ -16,20 +16,6 @@ router.route('/create').post((req, res) => {
     let CardDetails = req.body
     console.log("new req", CardDetails);
 
-
-
-    // let transferredData = { name, card_number, exp_month, exp_year, cvc };
-    // console.log("trans", transferredData);
-    // async and callback doesnot work togather.
-    // try {
-    //     let data = await CURD_SCHEMA.create(CardDetails, (er, data) => { })
-    //     console.log(typeof (data.CardDetails.exp_month));
-    //     res.send(data)
-    // } catch (e) {
-    //     console.log(e);
-    //     res.send(e)
-    // }
-
     CURD_SCHEMA.create(CardDetails, (error, data) => {
         if (error) {
             console.log("error occured", error);
@@ -39,6 +25,36 @@ router.route('/create').post((req, res) => {
         }
     })
 });
+
+
+// let transferredData = { name, card_number, exp_month, exp_year, cvc };
+// console.log("trans", transferredData);
+// async and callback doesnot work togather.
+// try {
+//     let data = await CURD_SCHEMA.create(CardDetails, (er, data) => { })
+//     console.log(typeof (data.CardDetails.exp_month));
+//     res.send(data)
+// } catch (e) {
+//     console.log(e);
+//     res.send(e)
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // router.route('/update/:id').get((req, res) => {
