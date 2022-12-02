@@ -13,7 +13,7 @@ app.use(
         methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
         preflightContinue: true,
         credentials: true,
-        allowedHeaders: ['Content-Type', 'Application/json', 'x-requested-with']
+        allowedHeaders: ['Content-Type', 'x-requested-with']
     })
 );
 app.use('/', (req, res, next) => {
