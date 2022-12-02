@@ -9,7 +9,7 @@ app.use(json());
 
 app.use(
     cors({
-        origin: ["https://visionary-gecko-559fb4.netlify.app/"],
+        origin: 'https://visionary-gecko-559fb4.netlify.app/',
         methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
         preflightContinue: true,
         credentials: true
