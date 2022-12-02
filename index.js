@@ -12,7 +12,8 @@ app.use(
         origin: "*",
         methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
         preflightContinue: true,
-        credentials: true
+        credentials: true,
+        allowedHeaders: ['Content-Type', 'x-requested-with']
     })
 );
 app.use('/', (req, res, next) => {
