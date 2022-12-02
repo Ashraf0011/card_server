@@ -1,7 +1,6 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const router = express.Router();
-const CURD_SCHEMA = require('./schema');
+import { Router } from 'express';
+const router = Router();
+import CURD_SCHEMA from './schema';
 
 
 // Properly working version for vercel based backend.
@@ -112,4 +111,4 @@ router.route('/create').post((req, res) => {
 
 
 
-module.exports = router;
+export default router;

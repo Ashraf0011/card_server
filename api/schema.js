@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import { Schema as _Schema, model } from 'mongoose';
+const Schema = _Schema;
 
 const CRUDschema = new Schema({
 
@@ -15,4 +15,4 @@ const CRUDschema = new Schema({
 }, { collection: 'Payments' });
 
 // export
-module.exports = mongoose.model("CURD_SCHEMA", CRUDschema);
+export default model("CURD_SCHEMA", CRUDschema);

@@ -1,12 +1,12 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const crudRoutes = require('./api/CRUDfunc');
+import express, { json } from 'express';
+import mongoose from 'mongoose';
+import crudRoutes from './api/CRUDfunc';
 require('dotenv').config();
-var cors = require('cors');
+import cors from 'cors';
 
 
 const app = express();
-app.use(express.json());
+app.use(json());
 
 app.use(
     cors(
