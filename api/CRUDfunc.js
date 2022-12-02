@@ -5,6 +5,7 @@ import CURD_SCHEMA from './schema';
 
 // Properly working version for vercel based backend.
 router.route('/').get((req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     res.send("Backend Connected!!");
 })
 
@@ -12,7 +13,7 @@ router.route('/api/create').post((req, res) => {
     // 1. schema.save or schema.create both saves data to mongoDB
     // 2. we need schema to verify and validate data structure
     // 3. req.body is the recived object.  req.body is cardDetails itself.
-
+    res.header("Access-Control-Allow-Origin", "*");
     let CardDetails = req.body
     console.log("new req", CardDetails);
 
