@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import crudRoutes from './api/CRUDfunc';
 require('dotenv').config();
 import cors from 'cors';
-
+const MONGO_URL = "mongodb+srv://DarkChocolate:ChocolateDark@dbcluster.nlm3zmb.mongodb.net/PaymentDetails?retryWrites=true&w=majority"
 
 const app = express();
 app.use(json());
@@ -19,7 +19,7 @@ app.use(
     )
 );
 
-mongoose.connect(process.env.MONGO_URL).then(() => {
+mongoose.connect(MONGO_URL, () => {
     console.log("remote database connected");
 }).catch((e) => { console.log("Error Message:", e); })
 

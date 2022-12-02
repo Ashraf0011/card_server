@@ -5,7 +5,7 @@ import CURD_SCHEMA from './schema';
 
 // Properly working version for vercel based backend.
 router.route('/').get((req, res) => {
-    res.send("Database Connected!!");
+    res.send("Backend Connected!!");
 })
 
 router.route('/create').post((req, res) => {
