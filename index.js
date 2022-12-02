@@ -9,7 +9,7 @@ app.use(json());
 
 app.use(
     cors({
-        origin: "*",
+        origin: "https://card-server-kmkk2kymm-oblivious.vercel.app",
         methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
         preflightContinue: true,
         credentials: true,
