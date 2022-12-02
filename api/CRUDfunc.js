@@ -20,7 +20,7 @@ router.route('/create').post((req, res) => {
             console.log("error occured", error);
             res.send(error);
         } else {
-            res.json(data);
+            res.status(200).json(data);
         }
     })
 });
