@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import crudRoutes from './api/CRUDfunc';
 require('dotenv').config();
 import cors from 'cors';
+const port = process.env.PORT || 5002;
 
 const app = express();
 app.use(json());
@@ -13,14 +14,13 @@ app.use(
         methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
         preflightContinue: true,
         credentials: true,
-        // allowedHeaders: ['Content-Type', 'x-requested-with']
     })
 );
 
 
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@dbcluster.nlm3zmb.mongodb.net/?retryWrites=true&w=majority`)
-    .then((res) => {
-        console.log(res);
+    .then(() => {
+        console.log("DB connected");
     }).catch((e) => {
         console.log(e);
     })
@@ -29,6 +29,6 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@db
 // if we get '/' in call we will go to crud
 app.use('/', crudRoutes);
 
-app.listen(5002, () => {
-    console.log('use Postman to test, url--> http://localhost:5002/');
+app.listen(port, () => {
+    console.log(`use Postman to test, url--> http://localhost:/${port}`);
 })

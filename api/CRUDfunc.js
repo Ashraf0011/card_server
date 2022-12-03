@@ -43,22 +43,6 @@ router.route('/api/create').post((req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // router.route('/update/:id').get((req, res) => {
 //     CURD_SCHEMA.find((err, data) => {
 //         if (err) {
