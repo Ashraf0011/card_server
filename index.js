@@ -7,19 +7,22 @@ import cors from 'cors';
 const app = express();
 app.use(json());
 
+app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
+
 app.use(
     cors({
-        origin: "https://card-server-kmkk2kymm-oblivious.vercel.app",
+        origin: "https://card-server.vercel.app/",
         methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
         preflightContinue: true,
         credentials: true,
-        allowedHeaders: ['Content-Type', 'x-requested-with']
+        // allowedHeaders: ['Content-Type', 'x-requested-with']
     })
 );
-app.use('/', (req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    next();
-})
 
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {
