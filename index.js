@@ -25,12 +25,12 @@ app.use(
 );
 
 
-MONGO_URL = "mongodb+srv://DarkChocolate:ChocolateDark@dbcluster.nlm3zmb.mongodb.net/PaymentDetails?retryWrites=true&w=majority"
-mongoose.connect(MONGO_URL)
-    .then(() => {
-        console.log("remote database connected");
+mongoose.connect(`mongodb+srv://${process.env.DB_NAME}:${process.env.DB_PASS}@dbcluster.nlm3zmb.mongodb.net/?retryWrites=true&w=majority`)
+    .then((res) => {
+        console.log(res);
+    }).catch((e) => {
+        console.log(e);
     })
-    .catch((e) => { console.log("Error Message:", e); })
 
 
 // if we get '/' in call we will go to crud
