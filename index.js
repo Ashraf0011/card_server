@@ -24,7 +24,9 @@ app.use(
     })
 );
 
-mongoose.connect(process.env.MONGO_URL)
+
+MONGO_URL = "mongodb+srv://DarkChocolate:ChocolateDark@dbcluster.nlm3zmb.mongodb.net/PaymentDetails?retryWrites=true&w=majority"
+mongoose.connect(MONGO_URL)
     .then(() => {
         console.log("remote database connected");
     })
