@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import crudRoutes from './api/CRUDfunc';
 require('dotenv').config();
 import cors from 'cors';
-const port = process.env.PORT || 5002;
+const port = 5002;
 
 const app = express();
 // has to be before eveything else
