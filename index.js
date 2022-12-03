@@ -9,7 +9,7 @@ app.use(json());
 
 app.use(
     cors({
-        origin: "https://visionary-gecko-559fb4.netlify.app/",
+        origin: "*",
         methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
         preflightContinue: true,
         credentials: true,
@@ -18,7 +18,7 @@ app.use(
 );
 
 
-mongoose.connect(`mongodb+srv://${process.env.DB_NAME}:${process.env.DB_PASS}@dbcluster.nlm3zmb.mongodb.net/?retryWrites=true&w=majority`)
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@dbcluster.nlm3zmb.mongodb.net/?retryWrites=true&w=majority`)
     .then((res) => {
         console.log(res);
     }).catch((e) => {
